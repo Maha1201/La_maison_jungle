@@ -3,7 +3,7 @@ function CareScale({ scaleValue, careType }) {
     const scaleType = careType === 'light' ? '☀️' : '💧'
 
     return (
-        <div>
+        <div onClick={() => alert(`${scaleValue === 1 ? 'Peu' : scaleValue === 2 ? 'Modérément' : 'Beaucoup'} ${careType === 'light' ? 'de lumière' : `d'eau`}`)}>
             {range.map((rangeElem) => scaleValue >= rangeElem ? <span key={rangeElem.toString()}>{scaleType}</span> : null
             )}
         </div>
